@@ -159,6 +159,8 @@ canvas.confetti{width:100%;height:100%}
 #celebrate svg{width:1.2em;height:1.2em;flex:none}
 #music-toggle{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));z-index:5;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;padding:0;color:#fff;background:#FFCF00}#music-toggle svg{width:23px;height:23px}#music-toggle[aria-pressed="true"] .sound-on,#music-toggle[aria-pressed="false"] .sound-off{display:none}.confetti-message:not([hidden])~#music-toggle{visibility:hidden}
 @media(max-width:480px){.traits{display:flex;flex-direction:column;align-items:center}.traits .trait{flex:none;width:max-content;max-width:100%;min-height:44px;justify-content:flex-start;gap:8px;padding:6px 14px 6px 7px;white-space:nowrap;font-size:clamp(.8125rem,4vw,.95rem);line-height:1.2}.traits .trait>span{flex:0 0 30px}}
+.hero .wrap{min-height:100vh;min-height:100dvh}
+@media(max-height:550px){.hero .wrap{padding-block:clamp(44px,18dvh,100px) 24px}.hero h1{width:min(100%,105dvh)}}
 </style>
 </head>
 <body>
