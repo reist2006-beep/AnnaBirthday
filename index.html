@@ -12,10 +12,10 @@
 *{box-sizing:border-box}body{margin:0;font:1rem/1.55 var(--font);background:var(--cream);color:var(--ink)}
 h1,h2,p,figure{margin:0}h1,h2{line-height:1.02;font-weight:500;letter-spacing:-.045em;text-wrap:balance}h2{color:var(--heading);font-size:clamp(3.25rem,8vw,6.5rem)}p{max-width:48ch}
 .wrap{width:min(1120px,calc(100% - 40px));margin:auto}.pad{padding-block:clamp(66px,10vw,132px)}
-.videos,.final{position:relative;isolation:isolate;background:var(--teal);color:var(--ink)}.hero,.final{overflow:hidden;text-align:center}.hero{position:relative;isolation:isolate;background:var(--orange);color:var(--ink)}.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:url("assets/balloons.jpg") center top / cover no-repeat}
-.final{background:var(--cream)}.final:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 8% 5%,var(--sky) 0 28%,transparent 28.3%),radial-gradient(ellipse at 100% 76%,var(--sand) 0 48%,transparent 48.3%)}
+.videos{position:relative;isolation:isolate;background:var(--teal);color:var(--ink)}.hero{overflow:hidden;text-align:center}.hero{position:relative;isolation:isolate;background:var(--orange);color:var(--ink)}.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:url("assets/balloons.jpg") center top / cover no-repeat}
+
 .hero .wrap{transform:translateY(-5%);min-height:min(800px,96svh);display:grid;align-content:center;justify-items:center;padding-block:clamp(165px,37svh,300px) 64px;gap:12px}
-.hero h1{width:min(100%,820px)}.hero-lettering{display:block;width:100%;height:auto}.hero p,.final p{margin-inline:auto}.hero p{font-size:clamp(1rem,2.5vw,1.35rem);font-weight:500;color:#fff}
+.hero h1{width:min(100%,820px)}.hero-lettering{display:block;width:100%;height:auto}.hero p{margin-inline:auto}.hero p{font-size:clamp(1rem,2.5vw,1.35rem);font-weight:500;color:#fff}
 .about{background:var(--cream);text-align:center}
 .about h2{font-size:clamp(2.5rem,6vw,5.25rem)}
 .traits{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:32px auto 0;padding:0;max-width:940px;list-style:none}
@@ -29,13 +29,12 @@ h1,h2,p,figure{margin:0}h1,h2{line-height:1.02;font-weight:500;letter-spacing:-.
 .about .trait span{background:#fff;color:#102B42}
 .video-frame{position:relative;display:grid;place-items:center;overflow:hidden}.video-frame video{position:absolute;inset:0;width:100%;height:100%}.video-frame video[hidden]{display:none}
 .videos{background-color:var(--sky);background-image:linear-gradient(155deg,var(--sky) 16%,#e8f7ff 83%);background-size:100% 150%;background-position:center 35%}
-.videos h2,.final h2{color:var(--heading)}.video-heading{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px}.controls{display:flex;gap:8px}.controls[hidden]{display:none}
+.videos h2{color:var(--heading)}.video-heading{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px}.controls{display:flex;gap:8px}.controls[hidden]{display:none}
 button{border:0;border-radius:40px;padding:11px 19px;background:var(--sand);color:var(--ink);font:500 1rem var(--font);cursor:pointer}button:disabled{opacity:.45;cursor:default}:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .track{display:flex;gap:clamp(48px,6vw,96px);overflow-x:auto;scrollbar-width:none;padding:82px clamp(20px,5vw,96px) 96px;margin:0;list-style:none}.track::-webkit-scrollbar{display:none}.track li{flex:0 0 clamp(175px,25vw,250px);position:relative;cursor:grab;user-select:none}.video-card{transform:translateY(var(--card-offset,0px)) rotate(var(--card-tilt,-2deg))}.video-card figcaption{color:var(--heading);margin-top:13px;text-align:center;font-size:1.5rem;font-weight:500}.track li:nth-child(6n+1){--card-offset:14px}.track li:nth-child(6n+2){--card-tilt:2deg;--card-offset:36px}.track li:nth-child(6n+3){--card-tilt:-1deg;--card-offset:-27px}.track li:nth-child(6n+4){--card-tilt:2.5deg;--card-offset:18px}.track li:nth-child(6n+5){--card-tilt:-2.5deg;--card-offset:-15px}.track li:nth-child(6n+6){--card-tilt:1.5deg;--card-offset:30px}.track.is-dragging,.track.is-dragging *{cursor:grabbing!important}.video-frame{aspect-ratio:9/16;box-shadow:0 16px 42px #142b3130;border-radius:15px;background:repeating-linear-gradient(145deg,transparent 0 9px,#fff1 9px 10px),color-mix(in srgb,var(--sky) 65%,var(--cream));color:var(--ink)}.video-frame video{object-fit:contain;background:var(--ink)}.slot{text-align:center;padding:8px}
-.final .wrap{display:grid;justify-items:center;gap:20px}
-.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:3}
+
 @media(max-width:700px){.hero::before{background-size:cover}.hero .wrap{min-height:74svh;padding-block:clamp(175px,32svh,240px) 60px}.track{display:grid;gap:42px;overflow:visible;justify-items:center;padding:0}.track li{width:min(60vw,100%);cursor:auto;user-select:auto}.video-card{transform:none}.controls{display:none}.traits{gap:9px}.trait{padding-right:12px}.trait span{flex-basis:31px}}
-@media(prefers-reduced-motion:reduce){}
+
 @media(prefers-reduced-motion:no-preference){
   .hero::before{animation:hero-fade-in .4s ease-out both;transform-origin:center;transform:scale(var(--balloon-zoom,1))}
   .hero-lettering,.hero p{animation:hero-fade-in .75s .4s ease-out both}
@@ -62,10 +61,6 @@ button{border:0;border-radius:40px;padding:11px 19px;background:var(--sand);colo
 .videos h2{display:flow-root;width:min(100%,665px);min-width:0}
 .videos-lettering{display:block;width:100%;height:auto;margin-block:-7%;filter:url(#heading-blue)}
 
-
-
-
-
 .video-heading{flex-direction:column;align-items:center}
 
 .video-actions .controls{justify-content:center}
@@ -80,14 +75,8 @@ button{border:0;border-radius:40px;padding:11px 19px;background:var(--sand);colo
 
 .hero .hero-signature{display:inline-flex;align-items:center;justify-content:center;gap:.55em;color:#fff}.hero-signature span{color:inherit;line-height:1}
 .hero-down{display:grid;place-items:center;width:44px;height:44px;color:white;text-decoration:none;font-size:2rem;line-height:1;border-radius:50%}
-.wishes button{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:75.4px;max-width:100%;padding:20.8px clamp(18px,6vw,44.2px);font-size:clamp(1.56rem,3.9vw,2.08rem)}.wishes button svg{width:1em;height:1em;flex:none}
-canvas.confetti{width:100%;height:100%}
 @media(prefers-reduced-motion:no-preference){.hero-down span{animation:hero-down-float 1.8s ease-in-out infinite}}
 @keyframes hero-down-float{50%{transform:translateY(6px)}}
-.confetti-message[hidden]{display:none}
-.confetti-message{position:fixed;inset:0;z-index:4;display:grid;place-items:center}
-.confetti-lettering{display:block;width:min(64.8vw,669.6px);height:auto;filter:brightness(0) invert(1)}
-#close-confetti{position:absolute;top:max(16px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));width:44px;height:44px;padding:0;pointer-events:auto;background:#fff;color:#142139;font-size:1.5rem}
 @media(prefers-reduced-motion:no-preference){
   .confetti-message:not([hidden]){animation:hero-fade-in .9s ease-in-out both}
 }
@@ -95,17 +84,13 @@ canvas.confetti{width:100%;height:100%}
 .video-play{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:clamp(56px,7vw,78px);aspect-ratio:1;padding:0;background:#007CBE;color:rgb(255 255 255 / .83)}
 .video-play[hidden]{display:none}
 .video-play span{width:32%;aspect-ratio:1;background:currentColor;clip-path:polygon(15% 0,100% 50%,15% 100%)}
-.wishes button{color:#fff;background:linear-gradient(#102B423f,#102B423f),linear-gradient(110deg,#FD6A0C,#00916E,#B5E2FA,#007CBE,#FFCF00);background-size:100% 100%,300% 100%}
 @media(prefers-reduced-motion:no-preference){
   .hero h1{opacity:var(--hero-title-opacity,1);transform:scale(var(--hero-title-zoom,1))}
   .traits[data-reveal="pending"] .trait{opacity:0;translate:-14px 8px}
   .traits[data-reveal="shown"] .trait{animation:trait-enter .42s var(--trait-delay,0ms) ease-out backwards}
-  .wishes button{animation:confetti-button-glow 4.8s linear infinite,confetti-button-pulse 2.6s ease-in-out infinite}
-  .wishes button:is(:hover,:focus-visible){animation-play-state:paused}
 }
 @keyframes trait-enter{from{opacity:0;translate:-14px 8px}to{opacity:1;translate:0 0}}
-@keyframes confetti-button-glow{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
-@keyframes confetti-button-pulse{50%{scale:1.045}}
+
 @media(min-width:701px){.track{justify-content:safe center}}
 @media(prefers-reduced-motion:no-preference){
   .track[data-reveal="pending"] li{opacity:0;translate:-30px 0}
@@ -130,12 +115,50 @@ canvas.confetti{width:100%;height:100%}
   .video-card figcaption{margin-top:10px;font-size:1.25rem}
   .wishes .wrap{gap:30px}
   .wishes p{max-width:36ch;line-height:1.55}
-  .wishes button{min-height:58px;padding:14px clamp(12px,5vw,26px);font-size:clamp(1rem,5.05vw,1.42rem)}
 }
 
 .about-lettering,.wishes-lettering{margin-block:0}
-@media(max-width:700px){.traits{display:grid;grid-template-columns:minmax(0,1fr);width:min(100%,340px);gap:9px}.trait{width:100%;min-height:46px;white-space:nowrap;padding-inline:8px 12px}.trait span{flex:0 0 31px}}
+@media(max-width:700px){.traits{gap:9px}.trait{width:max-content;max-width:100%;min-height:46px;padding-inline:8px 12px}.trait span{flex:0 0 31px}.trait-long{flex-basis:100%;justify-content:center}}
+
+
+
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:3}
+.wishes button{min-height:58px;padding:16px 34px;font-size:clamp(1.2rem,3vw,1.6rem)}
+canvas.confetti{width:100%;height:100%}
+.confetti-message[hidden]{display:none}
+.confetti-message{position:fixed;inset:0;z-index:4;display:grid;place-items:center;pointer-events:none}
+.confetti-lettering{display:block;width:min(70.2vw,725.4px);height:auto;filter:brightness(0) invert(1)}
+#close-confetti{position:absolute;top:max(16px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));width:44px;height:44px;padding:0;pointer-events:auto;background:#fff;color:#142139;font-size:1.5rem}
+.wishes button{background:#FFCF00;color:#102B42}
+#celebrate{display:inline-flex;align-items:center;justify-content:center;gap:.5em;color:#fff;background:linear-gradient(105deg,#FD6A0C,#FFCF00,#7cc69c,#4cbac5,#59b8ef,#FD6A0C);background-size:280% 100%;border-radius:999px;transition:transform .25s ease-out}
+#celebrate.is-bursting{visibility:hidden;pointer-events:none}
+@media(prefers-reduced-motion:no-preference){
+  #celebrate{animation:celebrate-gradient 5.5s ease-in-out infinite alternate,celebrate-pulse 2.6s ease-in-out infinite}
+  #celebrate.is-bursting{visibility:visible;animation:celebrate-break .24s ease-out both}
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  #celebrate:not(.is-bursting):hover{transform:scale(1.1);animation:celebrate-gradient 1.9s ease-in-out infinite alternate}
+}
+@keyframes celebrate-gradient{from{background-position:0 50%}to{background-position:100% 50%}}
+@keyframes celebrate-pulse{50%{scale:1.045}}
+@keyframes celebrate-break{to{opacity:0;transform:scale(.88);clip-path:inset(32% 29% round 999px);visibility:hidden}}
+#restart-celebration{position:absolute;bottom:max(24px,calc(env(safe-area-inset-bottom) + 12px));left:50%;translate:-50% 0;pointer-events:auto;display:inline-flex;align-items:center;gap:.5em;background:#C64B00;color:#fff;white-space:nowrap}
+@media(prefers-reduced-motion:no-preference){
+  .confetti-message:not([hidden]) #restart-celebration{animation:restart-reveal .35s .9s ease-out both}
+}
+@keyframes restart-reveal{from{opacity:0;visibility:hidden}to{opacity:1;visibility:visible}}
+#celebrate svg{width:1.2em;height:1.2em;flex:none}
+#music-toggle{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));z-index:5;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;padding:0;color:#fff;background:#FFCF00}#music-toggle svg{width:23px;height:23px}#music-toggle[aria-pressed="true"] .sound-on,#music-toggle[aria-pressed="false"] .sound-off{display:none}.confetti-message:not([hidden])~#music-toggle{visibility:hidden}
 </style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="&#1040;&#1085;&#1102;, &#1079; &#1076;&#1085;&#1077;&#1084; &#1085;&#1072;&#1088;&#1086;&#1076;&#1078;&#1077;&#1085;&#1085;&#1103;!">
+<meta property="og:description" content="&#1047; &#1083;&#1102;&#1073;&#1086;&#1074;&#8217;&#1102; &#1074;&#1110;&#1076; &#1091;&#1089;&#1110;&#1108;&#1111; &#1088;&#1086;&#1076;&#1080;&#1085;&#1080;">
+<meta property="og:url" content="https://reist2006-beep.github.io/AnnaBirthday/">
+<meta property="og:image" content="https://reist2006-beep.github.io/AnnaBirthday/assets/share-preview.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><filter id="heading-blue" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 .48627451  0 0 0 0 .74509804  0 0 0 1 0"/></filter></defs></svg>
@@ -155,7 +178,7 @@ canvas.confetti{width:100%;height:100%}
       <li class="trait trait-sky"><span aria-hidden="true"><svg aria-hidden="true" focusable="false" fill="currentColor" clip-rule="evenodd" fill-rule="evenodd" height="512" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 32 32" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m18.998 23.651c.066-.104.244-.38.417-.605.45-.581 1.104-1.342 1.823-2.215 1.253-1.521 2.688-3.371 3.64-5.218.694-1.345 1.128-2.696 1.128-3.935 0-5.52-4.48-10-10-10-5.519 0-10 4.48-10 10 0 2.738-.006 9.622-.006 11.822 0 3.587 2.913 6.5 6.5 6.5 3.537 0 6.418-2.831 6.498-6.349zm-7.998-10.312h.001c1.656 0 3 1.344 3 3s-1.344 3-3 3c-.552 0-1 .448-1 1s.448 1 1 1c2.76 0 5-2.241 5-5 0-2.385-1.673-4.383-3.91-4.881.389-1.871 1.972-3.458 3.895-3.458 2.2 0 3.984 1.793 3.984 4 0 .552.448 1 1 1s1-.448 1-1c0-3.312-2.682-6-5.984-6-3.284 0-5.986 3.045-5.986 6.339 0 .552.448 1 1 1z"/></svg></span>&#1059;&#1084;&#1110;&#1108; &#1089;&#1083;&#1091;&#1093;&#1072;&#1090;&#1080;</li>
       <li class="trait trait-gold"><span aria-hidden="true"><svg aria-hidden="true" focusable="false" fill="currentColor" id="Layer_1" enable-background="new 0 0 100 100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m50 2.5c26.0217361 0 47.5 21.0652161 47.5 47.5 0 26.0217361-21.4782639 47.5-47.5 47.5-26.434782 0-47.5-21.4782639-47.5-47.5.000001-26.434782 21.065218-47.5 47.5-47.5zm-17.3478279 30.5652161c3.304348 0 6.608696 2.8913078 6.608696 6.608696 0 3.717392-3.304348 6.608696-6.608696 6.608696-3.7173901 0-6.6086922-2.891304-6.6086922-6.608696 0-3.7173882 2.8913021-6.608696 6.6086922-6.608696zm34.695652 0c3.717392 0 6.608696 2.8913078 6.608696 6.608696 0 3.717392-2.891304 6.608696-6.608696 6.608696-3.7173882 0-6.6086922-2.891304-6.6086922-6.608696 0-3.7173882 2.891304-6.608696 6.6086922-6.608696zm6.6498642 24.8043518c2.3664322 0 3.9727859 2.3914299 3.1022491 4.5919228-4.2947769 10.8561057-14.7370567 18.5385093-27.0999374 18.5385093-12.4088173 0-23.2052193-7.7396011-27.26017-18.6596565-.8047619-2.1672325.8343639-4.4707756 3.1461906-4.4707756z" fill-rule="evenodd"/></svg></span>&#1065;&#1080;&#1088;&#1072; &#1091;&#1089;&#1084;&#1110;&#1096;&#1082;&#1072;</li>
       <li class="trait trait-rose"><span aria-hidden="true"><svg aria-hidden="true" focusable="false" fill="currentColor" id="Layer_1" height="512" viewBox="0 0 64 64" width="512" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m63 32a10.938 10.938 0 0 0 -11-10.875c-.35 0-.7.02-1.038.052.2-.277.389-.563.564-.863a10.807 10.807 0 0 0 -4.026-14.855 11.069 11.069 0 0 0 -15.026 3.98c-.176.3-.331.606-.474.915-.143-.309-.3-.615-.474-.915a11.069 11.069 0 0 0 -15.026-3.98 10.807 10.807 0 0 0 -4.026 14.855c.175.3.365.586.564.863-.342-.032-.688-.052-1.038-.052a10.876 10.876 0 1 0 0 21.75c.35 0 .7-.02 1.038-.052-.2.277-.389.563-.564.863a10.807 10.807 0 0 0 4.026 14.855 11.069 11.069 0 0 0 15.026-3.98c.176-.3.331-.606.474-.915.143.309.3.615.474.915a11.069 11.069 0 0 0 15.026 3.98 10.807 10.807 0 0 0 4.026-14.855c-.175-.3-.365-.586-.564-.863.342.032.688.052 1.038.052a10.938 10.938 0 0 0 11-10.875zm-31 9a9 9 0 1 1 9-9 9 9 0 0 1 -9 9z"/></svg></span>&#1058;&#1091;&#1088;&#1073;&#1086;&#1090;&#1083;&#1080;&#1074;&#1072;</li>
-      <li class="trait trait-green"><span aria-hidden="true"><svg aria-hidden="true" focusable="false" fill="currentColor" id="Capa_1" enable-background="new 0 0 512.499 512.499" height="512" viewBox="0 0 512.499 512.499" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m167.015 90.566c35.752-3.177 64.813-6.482 89.235-10.467 74.171-12.105 104.145-32.701 138.3-74.689 5.7-6.899 16.201-7.2 22.2-.899l91.041 91.989c5.109 5.109 5.971 13.215 1.838 19.142-11.451 16.427-24.141 31.575-37.913 45.216-27.249 30.57-55.6 52.352-82.3 67.118-16.846 9.316-35.852 14.024-55.103 14.024h-89.063c-27.225 0-50.215-18.133-57.552-42.98-2.365-8.011 3.067-16.465 11.403-16.989.324-.02.652-.031.983-.031h130.82c8.159 0 15.1-6.372 15.339-14.527.253-8.623-6.435-15.473-14.993-15.473h-150c-4.501 0-8.699 2.1-11.7 5.4-3.84 3.973-22.123 31.102-56.975 60.432-22.584 19.006-76.817 54.168-97.324 54.168-12.9 0-19.799-15.3-11.1-24.899l136-150c2.401-3.001 6.301-4.801 10.199-5.101 5.712-.477 11.265-.954 16.665-1.434z"/><path d="m345.484 421.933c-35.752 3.177-64.813 6.482-89.235 10.467-74.171 12.105-104.145 32.701-138.3 74.689-5.7 6.899-16.201 7.2-22.2.899l-91.041-91.989c-5.109-5.109-5.971-13.215-1.838-19.142 11.451-16.427 24.141-31.575 37.913-45.216 27.249-30.57 55.6-52.352 82.3-67.118 16.846-9.316 35.852-14.024 55.103-14.024h89.064c27.225 0 50.215 18.133 57.552 42.98 2.365 8.011-3.067 16.465-11.403 16.989-.324.02-.652.031-.983.031h-130.82c-8.159 0-15.1 6.372-15.339 14.527-.253 8.623 6.435 15.473 14.993 15.473h150c4.501 0 8.699-2.1 11.7-5.4 3.84-3.973 22.123-31.102 56.975-60.432 22.584-19.006 76.817-54.168 97.324-54.168 12.9 0 19.799 15.3 11.1 24.899l-136 150c-2.401 3.001-6.301 4.801-10.199 5.101-5.713.477-11.266.954-16.666 1.434z"/></g></svg></span>&#1047;&#1072;&#1074;&#1078;&#1076;&#1080; &#1087;&#1110;&#1076;&#1090;&#1088;&#1080;&#1084;&#1072;&#1108;</li>
+      <li class="trait trait-green trait-long"><span aria-hidden="true"><svg aria-hidden="true" focusable="false" fill="currentColor" id="Capa_1" enable-background="new 0 0 512.499 512.499" height="512" viewBox="0 0 512.499 512.499" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m167.015 90.566c35.752-3.177 64.813-6.482 89.235-10.467 74.171-12.105 104.145-32.701 138.3-74.689 5.7-6.899 16.201-7.2 22.2-.899l91.041 91.989c5.109 5.109 5.971 13.215 1.838 19.142-11.451 16.427-24.141 31.575-37.913 45.216-27.249 30.57-55.6 52.352-82.3 67.118-16.846 9.316-35.852 14.024-55.103 14.024h-89.063c-27.225 0-50.215-18.133-57.552-42.98-2.365-8.011 3.067-16.465 11.403-16.989.324-.02.652-.031.983-.031h130.82c8.159 0 15.1-6.372 15.339-14.527.253-8.623-6.435-15.473-14.993-15.473h-150c-4.501 0-8.699 2.1-11.7 5.4-3.84 3.973-22.123 31.102-56.975 60.432-22.584 19.006-76.817 54.168-97.324 54.168-12.9 0-19.799-15.3-11.1-24.899l136-150c2.401-3.001 6.301-4.801 10.199-5.101 5.712-.477 11.265-.954 16.665-1.434z"/><path d="m345.484 421.933c-35.752 3.177-64.813 6.482-89.235 10.467-74.171 12.105-104.145 32.701-138.3 74.689-5.7 6.899-16.201 7.2-22.2.899l-91.041-91.989c-5.109-5.109-5.971-13.215-1.838-19.142 11.451-16.427 24.141-31.575 37.913-45.216 27.249-30.57 55.6-52.352 82.3-67.118 16.846-9.316 35.852-14.024 55.103-14.024h89.064c27.225 0 50.215 18.133 57.552 42.98 2.365 8.011-3.067 16.465-11.403 16.989-.324.02-.652.031-.983.031h-130.82c-8.159 0-15.1 6.372-15.339 14.527-.253 8.623 6.435 15.473 14.993 15.473h150c4.501 0 8.699-2.1 11.7-5.4 3.84-3.973 22.123-31.102 56.975-60.432 22.584-19.006 76.817-54.168 97.324-54.168 12.9 0 19.799 15.3 11.1 24.899l-136 150c-2.401 3.001-6.301 4.801-10.199 5.101-5.713.477-11.266.954-16.666 1.434z"/></g></svg></span>&#1047;&#1072;&#1074;&#1078;&#1076;&#1080; &#1087;&#1110;&#1076;&#1090;&#1088;&#1080;&#1084;&#1072;&#1108;</li>
       <li class="trait trait-gold"><span aria-hidden="true"><svg aria-hidden="true" focusable="false" fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <g>
@@ -197,9 +220,9 @@ canvas.confetti{width:100%;height:100%}
 </g>
 </svg></span>&#1042;&#1110;&#1076;&#1082;&#1088;&#1080;&#1090;&#1072; &#1089;&#1077;&#1088;&#1094;&#1077;&#1084;</li>
       <li class="trait trait-rose"><span aria-hidden="true"><svg aria-hidden="true" focusable="false" fill="currentColor" enable-background="new 0 0 32 32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="Grid" display="none"/><g id="film_roll"/><g id="ticket"/><g id="fortune_wheel"/><g id="fireworks"/><g id="poker_cards"/><g id="disco_ball"/><g id="dice"/><g id="gamepad"/><g id="talking"/><g id="cinema"/><g id="radio"/><g id="ice_cream"/><g id="camera"/><g id="balloon"/><g id="domino"/><g id="magic_wand"/><g id="speaker"/><g id="wine"/><g id="confetti"><path d="m25.287 7.613c.23 0 .461-.088.637-.264l.411-.411c.352-.352.352-.922 0-1.273s-.922-.352-1.273 0l-.412.411c-.352.352-.352.922 0 1.273.176.176.407.264.637.264z"/><path d="m22.154 10.746c.23 0 .461-.088.637-.264l.411-.411c.352-.352.352-.922 0-1.273s-.922-.352-1.273 0l-.411.411c-.352.352-.352.922 0 1.273.175.176.406.264.636.264z"/><path d="m25.062 10.482c.176.176.406.264.637.264s.461-.088.637-.264c.352-.352.352-.922 0-1.273l-.411-.411c-.352-.352-.922-.352-1.273 0s-.352.922 0 1.273z"/><path d="m21.929 7.35c.176.176.406.264.637.264s.461-.088.637-.264c.352-.352.352-.922 0-1.273l-.411-.411c-.352-.352-.922-.352-1.273 0s-.352.922 0 1.273z"/><path d="m27.762 18.705c-.351-.35-.907-.338-1.261.013-.352.352-.339.935.013 1.286.176.176.406.264.637.264s.461-.088.637-.264c.352-.352.352-.922 0-1.273z"/><path d="m12.658 5.775c.23 0 .461-.088.637-.264.352-.352.352-.922 0-1.273l-.025-.025c-.352-.349-.907-.338-1.261.013-.352.352-.339.935.013 1.286.175.176.406.263.636.263z"/><path d="m16.231 8.392c.23 0 .461-.088.637-.264l1.621-1.621c.687-.688 1.065-1.601 1.065-2.572s-.379-1.885-1.066-2.571c-.352-.352-.921-.351-1.272.001s-.351.921.001 1.272c.347.347.538.808.538 1.298s-.191.952-.539 1.299l-1.621 1.621c-.352.352-.352.922 0 1.273.176.176.406.264.636.264z"/><path d="m30.637 13.512c-1.373-1.375-3.769-1.374-5.144-.001l-1.621 1.621c-.352.352-.352.922 0 1.273.176.176.406.264.637.264s.461-.088.637-.264l1.621-1.621c.693-.695 1.903-.694 2.597-.001.352.354.921.353 1.272.001s.352-.921.001-1.272z"/><path d="m9.243 22.757c-1.532-1.533-3.339-2.827-5.364-3.855-.996 3.088-1.559 5.954-1.859 8.398-.19 1.55 1.13 2.87 2.68 2.68 2.444-.3 5.31-.863 8.398-1.859-1.028-2.026-2.322-3.832-3.855-5.364z"/><path d="m23.35 20.93c-1.19-2.9-2.81-5.37-4.86-7.42s-4.52-3.67-7.42-4.86c-1.08-.45-2.44.01-3.03 1.02-.558.938-1.135 1.987-1.701 3.129 3.067 1.263 5.654 2.962 7.778 5.084 2.129 2.131 3.833 4.726 5.064 7.715l.022.054.002.007c1.14-.565 2.187-1.141 3.124-1.698 1.011-.591 1.471-1.951 1.021-3.031z"/><path d="m12.844 19.156c-1.967-1.967-4.27-3.484-7.036-4.636h-.261c-.371.841-.728 1.732-1.072 2.661l.088.044c2.25 1.125 4.253 2.558 5.954 4.258 1.7 1.701 3.133 3.704 4.258 5.954l.044.088c.929-.344 1.82-.701 2.661-1.072v-.261c-1.152-2.766-2.669-5.069-4.636-7.036z"/></g><g id="karaoke"/><g id="vinyl"/><g id="party_hat"/><g id="mask"/><g id="popcorn"/><g id="headphone"/></svg></span>&#1056;&#1072;&#1076;&#1110;&#1108; &#1079;&#1072; &#1110;&#1085;&#1096;&#1080;&#1093;</li>
-      <li class="trait trait-sky"><span aria-hidden="true"><svg aria-hidden="true" focusable="false" fill="currentColor" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><g id="coffee_cup"><path d="m18 7c-.342 0-.675.059-1 .144v-1.144c0-.552-.447-1-1-1h-13c-.553 0-1 .448-1 1v7c0 3.309 2.691 6 6 6h3c2.689 0 4.97-1.778 5.73-4.22.407.137.833.22 1.27.22 2.206 0 4-1.794 4-4s-1.794-4-4-4zm0 6c-.355 0-.698-.098-1-.274v-3.452c.302-.176.645-.274 1-.274 1.103 0 2 .897 2 2s-.897 2-2 2z"/></g></svg></span>&#1055;&#1086;&#1088;&#1091;&#1095; &#1110;&#1079; &#1085;&#1077;&#1102; &#1090;&#1077;&#1087;&#1083;&#1086;</li>
+      <li class="trait trait-sky trait-long"><span aria-hidden="true"><svg aria-hidden="true" focusable="false" fill="currentColor" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><g id="coffee_cup"><path d="m18 7c-.342 0-.675.059-1 .144v-1.144c0-.552-.447-1-1-1h-13c-.553 0-1 .448-1 1v7c0 3.309 2.691 6 6 6h3c2.689 0 4.97-1.778 5.73-4.22.407.137.833.22 1.27.22 2.206 0 4-1.794 4-4s-1.794-4-4-4zm0 6c-.355 0-.698-.098-1-.274v-3.452c.302-.176.645-.274 1-.274 1.103 0 2 .897 2 2s-.897 2-2 2z"/></g></svg></span>&#1055;&#1086;&#1088;&#1091;&#1095; &#1110;&#1079; &#1085;&#1077;&#1102; &#1090;&#1077;&#1087;&#1083;&#1086;</li>
       <li class="trait trait-peach"><span aria-hidden="true"><svg aria-hidden="true" focusable="false" fill="currentColor" height="512" viewBox="0 0 48 48" width="512" xmlns="http://www.w3.org/2000/svg"><g id="Line"><path d="m42.9 19c-1.6 0-2.926 1.2-3.085 2.791l-.775 7.754-3.626 3.626.352-2.46c.198-1.389-.623-2.718-1.953-3.162-1.32-.44-2.775.124-3.452 1.343l-3.731 6.716c-.412.741-.63 1.58-.63 2.429v6.963c0 .552.447 1 1 1h10c.334 0 .646-.167.832-.445l7.328-10.993c.549-.823.84-1.782.84-2.774v-9.688c0-1.709-1.391-3.1-3.1-3.1z"/><path d="m10.168 45.555c.186.278.498.445.832.445h10c.553 0 1-.448 1-1v-6.963c0-.848-.218-1.688-.629-2.429l-3.731-6.715c-1.541-2.778-5.861-1.328-5.405 1.818 0 0 .352 2.461.352 2.461l-3.627-3.627-.775-7.754c-.451-3.864-6.11-3.589-6.185.309v9.688c0 .992.291 1.951.84 2.773z"/><path d="m13.092 18.967 10.258 8.792c.373.321.927.321 1.301 0l10.258-8.792c2.6-2.229 4.091-5.471 4.091-8.896.084-7.085-8.84-10.784-13.778-5.707 0 0-1.222 1.222-1.222 1.222l-1.222-1.222c-4.934-5.075-13.866-1.379-13.778 5.707 0 3.425 1.491 6.667 4.092 8.896z"/></g></svg></span>&#1044;&#1086;&#1073;&#1088;&#1072;</li>
-      <li class="trait trait-green"><span aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M12 2a7 7 0 0 1 4.8 12.1c-.9.8-1.6 1.7-1.8 2.9H9c-.2-1.2-.9-2.1-1.8-2.9A7 7 0 0 1 12 2Zm-3 17h6v1.2A1.8 1.8 0 0 1 13.2 22h-2.4A1.8 1.8 0 0 1 9 20.2Z"/></svg></span>&#1056;&#1086;&#1079;&#1091;&#1084;&#1110;&#1108; &#1073;&#1077;&#1079; &#1089;&#1083;&#1110;&#1074;</li>
+      <li class="trait trait-green trait-long"><span aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M12 2a7 7 0 0 1 4.8 12.1c-.9.8-1.6 1.7-1.8 2.9H9c-.2-1.2-.9-2.1-1.8-2.9A7 7 0 0 1 12 2Zm-3 17h6v1.2A1.8 1.8 0 0 1 13.2 22h-2.4A1.8 1.8 0 0 1 9 20.2Z"/></svg></span>&#1056;&#1086;&#1079;&#1091;&#1084;&#1110;&#1108; &#1073;&#1077;&#1079; &#1089;&#1083;&#1110;&#1074;</li>
     </ul>
   </div>
 </section>
@@ -216,16 +239,16 @@ canvas.confetti{width:100%;height:100%}
         <button type="button" id="next" aria-controls="track">Далі <span aria-hidden="true">&#8594;</span></button>
       </div></div>
 </section>
-<section class="wishes pad" aria-labelledby="wishes-title"><div class="wrap"><h2 id="wishes-title"><img class="wishes-lettering" src="assets/wishes.svg" alt="&#1065;&#1086; &#1084;&#1080; &#1073;&#1072;&#1078;&#1072;&#1108;&#1084;&#1086;"></h2><p>Аню, ти вмієш вислухати, підтримати й щиро порадіти разом із нами. Бажаємо, щоб і тобі завжди було з ким розділити радість, поговорити про важливе й просто побути собою.</p><button type="button" id="celebrate"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M3 20 7.8 6.2a1.4 1.4 0 0 1 2.3-.5l9.2 9.2a1.4 1.4 0 0 1-.5 2.3L5 22a1.6 1.6 0 0 1-2-2Zm4-8.1-.7 2.1 4.9 4.9 2.1-.7ZM14 3h2v4h-2Zm4.4 4.6 2.8-2.8 1.4 1.4-2.8 2.8ZM19 11h4v2h-4Z"/></svg><span>Запустити конфеті</span></button></div></section>
+<section class="wishes pad" aria-labelledby="wishes-title"><div class="wrap"><h2 id="wishes-title"><img class="wishes-lettering" src="assets/wishes.svg" alt="&#1065;&#1086; &#1084;&#1080; &#1073;&#1072;&#1078;&#1072;&#1108;&#1084;&#1086;"></h2><p>Аню, ти вмієш вислухати, підтримати й щиро порадіти разом із нами. Бажаємо, щоб і тобі завжди було з ким розділити радість, поговорити про важливе й просто побути собою.</p><button type="button" id="celebrate"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><path d="m25.287 7.613c.23 0 .461-.088.637-.264l.411-.411c.352-.352.352-.922 0-1.273s-.922-.352-1.273 0l-.412.411c-.352.352-.352.922 0 1.273.176.176.407.264.637.264z"/><path d="m22.154 10.746c.23 0 .461-.088.637-.264l.411-.411c.352-.352.352-.922 0-1.273s-.922-.352-1.273 0l-.411.411c-.352.352-.352.922 0 1.273.175.176.406.264.636.264z"/><path d="m25.062 10.482c.176.176.406.264.637.264s.461-.088.637-.264c.352-.352.352-.922 0-1.273l-.411-.411c-.352-.352-.922-.352-1.273 0s-.352.922 0 1.273z"/><path d="m21.929 7.35c.176.176.406.264.637.264s.461-.088.637-.264c.352-.352.352-.922 0-1.273l-.411-.411c-.352-.352-.922-.352-1.273 0s-.352.922 0 1.273z"/><path d="m27.762 18.705c-.351-.35-.907-.338-1.261.013-.352.352-.339.935.013 1.286.176.176.406.264.637.264s.461-.088.637-.264c.352-.352.352-.922 0-1.273z"/><path d="m12.658 5.775c.23 0 .461-.088.637-.264.352-.352.352-.922 0-1.273l-.025-.025c-.352-.349-.907-.338-1.261.013-.352.352-.339.935.013 1.286.175.176.406.263.636.263z"/><path d="m16.231 8.392c.23 0 .461-.088.637-.264l1.621-1.621c.687-.688 1.065-1.601 1.065-2.572s-.379-1.885-1.066-2.571c-.352-.352-.921-.351-1.272.001s-.351.921.001 1.272c.347.347.538.808.538 1.298s-.191.952-.539 1.299l-1.621 1.621c-.352.352-.352.922 0 1.273.176.176.406.264.636.264z"/><path d="m30.637 13.512c-1.373-1.375-3.769-1.374-5.144-.001l-1.621 1.621c-.352.352-.352.922 0 1.273.176.176.406.264.637.264s.461-.088.637-.264l1.621-1.621c.693-.695 1.903-.694 2.597-.001.352.354.921.353 1.272.001s.352-.921.001-1.272z"/><path d="m9.243 22.757c-1.532-1.533-3.339-2.827-5.364-3.855-.996 3.088-1.559 5.954-1.859 8.398-.19 1.55 1.13 2.87 2.68 2.68 2.444-.3 5.31-.863 8.398-1.859-1.028-2.026-2.322-3.832-3.855-5.364z"/><path d="m23.35 20.93c-1.19-2.9-2.81-5.37-4.86-7.42s-4.52-3.67-7.42-4.86c-1.08-.45-2.44.01-3.03 1.02-.558.938-1.135 1.987-1.701 3.129 3.067 1.263 5.654 2.962 7.778 5.084 2.129 2.131 3.833 4.726 5.064 7.715l.022.054.002.007c1.14-.565 2.187-1.141 3.124-1.698 1.011-.591 1.471-1.951 1.021-3.031z"/><path d="m12.844 19.156c-1.967-1.967-4.27-3.484-7.036-4.636h-.261c-.371.841-.728 1.732-1.072 2.661l.088.044c2.25 1.125 4.253 2.558 5.954 4.258 1.7 1.701 3.133 3.704 4.258 5.954l.044.088c.929-.344 1.82-.701 2.661-1.072v-.261c-1.152-2.766-2.669-5.069-4.636-7.036z"/></svg><span>Запустити конфеті</span></button></div></section>
 </main>
-<canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+<canvas class="confetti" id="confetti-canvas" aria-hidden="true"></canvas>
 <div class="confetti-message" id="confetti-message" hidden>
   <img class="confetti-lettering" width="1774" height="887" alt="&#1040;&#1085;&#1102;, &#1079; &#1076;&#1085;&#1077;&#1084; &#1085;&#1072;&#1088;&#1086;&#1076;&#1078;&#1077;&#1085;&#1085;&#1103;!">
   <button type="button" id="close-confetti" aria-label="&#1047;&#1072;&#1082;&#1088;&#1080;&#1090;&#1080; &#1087;&#1088;&#1080;&#1074;&#1110;&#1090;&#1072;&#1085;&#1085;&#1103;">&#215;</button>
+  <button type="button" id="restart-celebration"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10a8 8 0 1 0-1.7 7M20 4v6h-6"/></svg><span>Почати знову</span></button>
 </div>
 <script>
 const videoSources = [{"source":"video/%D0%9C%D0%B0%D0%BC%D0%B0.mp4","title":"Мама","poster":"video/poster-3.jpg"},{"source":"video/%D0%91%D0%B0%D0%B1%D1%83%D1%88%D0%BA%D0%B0.mp4","title":"Бабушка","poster":"video/poster-1.jpg"},{"source":"video/%D0%91%D0%B0%D1%82%D1%8C%D0%BA%D0%BE.mp4","title":"Батько","poster":"video/poster-2.jpg"}];
-// Після завантаження впишіть шлях до кожного файлу, наприклад 'media/photo-1.jpg' або 'media/video-1.mp4'.
 const track = document.getElementById('track');
 const controls = document.getElementById('controls');
 const previous = document.getElementById('previous');
@@ -261,7 +284,7 @@ function scheduleScrollArtwork() {
 
 window.addEventListener('scroll', scheduleScrollArtwork, {passive:true});
 window.addEventListener('resize', scheduleScrollArtwork);
-reducedMotion.addEventListener('change', scheduleScrollArtwork);
+reducedMotion.addEventListener?.('change', scheduleScrollArtwork);
 updateScrollArtwork();
 const traits = document.querySelector('.traits');
 if ('IntersectionObserver' in window && !reducedMotion.matches) {
@@ -408,7 +431,7 @@ for (const [button, direction] of [[previous, -1], [next, 1]]) {
   });
 }
 track.addEventListener('scroll', updateControls, {passive:true});
-new ResizeObserver(updateControls).observe(track);
+if ('ResizeObserver' in window) new ResizeObserver(updateControls).observe(track);
 updateControls();
 
 if ('IntersectionObserver' in window && !reducedMotion.matches) {
@@ -428,7 +451,12 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
   }
 }
 
-const confetti = document.getElementById('confetti');
+</script>
+<script>
+{
+const mobile = matchMedia("(max-width:700px)");
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+const confetti = document.getElementById('confetti-canvas');
 const celebrate = document.getElementById('celebrate');
 const confettiContext = confetti.getContext('2d');
 const confettiMessage = document.getElementById('confetti-message');
@@ -437,6 +465,7 @@ const messageLettering = confettiMessage.querySelector('img');
 messageLettering.src = document.querySelector('.hero-lettering').src;
 
 function dismissConfetti() {
+  celebrate.classList.remove('is-bursting');
   cancelAnimationFrame(confettiFrame);
   particles = [];
   if (confettiContext) confettiContext.clearRect(0, 0, window.innerWidth, window.innerHeight);
@@ -445,6 +474,14 @@ function dismissConfetti() {
 }
 
 closeConfetti.addEventListener('click', dismissConfetti);
+document.getElementById('restart-celebration').addEventListener('click', () => {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+  if (location.hash) {
+    history.replaceState(history.state, '', location.pathname + location.search);
+  }
+  location.reload();
+});
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && (!confettiMessage.hidden || particles.length)) dismissConfetti();
 });
@@ -501,36 +538,65 @@ function revealConfettiMessage() {
 }
 
 celebrate.addEventListener('click', () => {
+  if (celebrate.classList.contains('is-bursting')) return;
   confettiMessage.hidden = true;
   if (!confettiContext) {
+    celebrate.classList.add('is-bursting');
     revealConfettiMessage();
     return;
   }
 
   const button = celebrate.getBoundingClientRect();
-  const colors = ['#FD6A0C','#0FA3B1','#007CBE','#B5E2FA','#FFCF00','#726DA8'];
+  celebrate.classList.add('is-bursting');
+  const colors = ['#FD6A0C','#0FA3B1','#007CBE','#B5E2FA','#FFCF00','#E53935','#726DA8'];
   const count = mobile.matches ? 7500 : 12500;
   const columns = Math.ceil(Math.sqrt(count * window.innerWidth / window.innerHeight));
   const rows = Math.ceil(count / columns);
   particles = Array.from({length:count}, (_, index) => {
-    const side = index % 2 ? 1 : -1;
+    const fromX = Math.random();
     return {
-      startX:(button.left + button.width * (.5 + side * .24)) / window.innerWidth,
-      startY:button.top + button.height / 2,
+      startX:(button.left + button.width * fromX) / window.innerWidth,
+      startY:button.top + button.height * Math.random(),
       endX:((index % columns) + Math.random()) / columns,
       endY:(Math.floor(index / columns) + Math.random()) / rows,
-      delay:Math.random() * 520,
+      delay:index < 400 ? 0 : Math.random() * 520,
       duration:2300 + Math.random() * 2100,
       lift:100 + Math.random() * Math.min(window.innerHeight * .77, 650),
       size:8 + Math.random() * 18,
       aspect:.4 + Math.random() * .6,
-      spin:(5 + Math.random() * 20) * side,
+      spin:(5 + Math.random() * 20) * (index % 2 ? 1 : -1),
       color:colors[index % colors.length]
     };
   });
   burstTime = performance.now();
   drawConfetti(burstTime + (reducedMotion.matches ? 5000 : 0));
 });
+}
+</script>
+<button id="music-toggle" type="button" aria-label="&#1052;&#1091;&#1079;&#1080;&#1082;&#1072;" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path fill="currentColor" stroke="none" d="M3 9v6h4l5 4V5L7 9z"/><path class="sound-on" d="M15 9a4 4 0 0 1 0 6m2.5-8.5a7.5 7.5 0 0 1 0 11"/><path class="sound-off" d="m16 10 4 4m0-4-4 4"/></svg></button>
+<audio id="birthday-music" src="assets/happy-birthday.wav" preload="auto" loop></audio>
+<script>
+(() => {
+  const audio = document.getElementById('birthday-music');
+  const toggle = document.getElementById('music-toggle');
+  audio.volume = .45;
+  function update() {
+    toggle.setAttribute('aria-pressed', String(!audio.paused && !audio.ended));
+  }
+  for (const event of ['play', 'pause', 'ended']) audio.addEventListener(event, update);
+  toggle.addEventListener('click', () => {
+    if (audio.paused) audio.play().catch(update);
+    else audio.pause();
+  });
+  document.getElementById('celebrate').addEventListener('click', () => {
+    audio.muted = false;
+    audio.play().catch(update);
+  });
+  document.addEventListener('play', event => {
+    if (event.target.tagName === 'VIDEO') audio.pause();
+  }, true);
+  audio.play().catch(update);
+})();
 </script>
 </body>
 </html>
